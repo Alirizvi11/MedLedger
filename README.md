@@ -58,14 +58,12 @@ Built by **Team Forzentix** at hackathon speed ⚡.
 ### 🔐 Medicine Validation  
 ![MedicineValidation](./screenshots/MediceneValidation.png)
 
-### 📊 Admin Dashbord  
-![Admin Dashboard](/screenshots/analytics-dashboard.png)
+### 📊 Register Organ  
+![RegisterOrgans](./screenshots/RegisterOrgan.png)
 
-### 📊 Add Member 
-![Add Member](/screenshots/register-member.png)
+### 📊 Qr Scan 
+![QrScan](./screenshots/QrScan.png)
 
-### 📦 Transaction Logs  
-![Transactions](/screenshots/transactions.png)
 ---
 
 ## 📂 Folder Structure
