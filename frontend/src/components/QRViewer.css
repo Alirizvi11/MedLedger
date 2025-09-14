@@ -1,0 +1,16 @@
+.cid-text {
+  font-size: 0.9rem;
+  word-break: break-word;
+  margin-top: 0.5rem;
+  color: #00ffff;
+}
+
+.glass-card {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  color: white;
+}

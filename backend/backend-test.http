@@ -1,0 +1,47 @@
+### Register Medicine
+POST http://localhost:5000/api/medicine
+Content-Type: application/json
+
+{
+  "name": "Paracetamol",
+  "manufacturer": "Cipla",
+  "batchNumber": "CDX-T10",
+  "expiryDate": "2025-12-31",
+  "dosage": "500mg",
+  "description": "Pain relief"
+}
+
+###
+
+
+### Lookup by CID
+GET http://localhost:5000/api/medicine/cid/QmQPERrcmtRYhKHQru7TwH7DqToFVZ4Qx8JPybea3JMjUy
+
+
+###
+
+### Register Organ
+POST http://localhost:5000/api/organ
+Content-Type: application/json
+
+{
+  "donorId": "D123",
+  "organType": "Kidney",
+  "bloodGroup": "B+",
+  "notes": "Urgent case"
+}
+
+###
+
+### Verify Consent
+GET http://localhost:5000/api/consent/D123
+
+###
+
+### Lookup Donor
+GET http://localhost:5000/api/donor/D123
+
+###
+
+### Verify CID
+GET http://localhost:5000/api/medicine/cid/bafybeib3xyz123

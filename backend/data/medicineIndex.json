@@ -1,0 +1,11 @@
+{
+  "CDX-T10": {
+    "cid": "QmQPERrcmtRYhKHQru7TwH7DqToFVZ4Qx8JPybea3JMjUy",
+    "txHash": "0x8a467141b42f084d59cbdab411218b732a1a58c2ec7e880811c90a01ff11beba",
+    "name": "Paracetamol",
+    "expiryDate": "2025-12-31",
+    "manufacturer": "Cipla",
+    "dosage": "500mg",
+    "description": "Pain relief and fever reduce"
+  }
+}
