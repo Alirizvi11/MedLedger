@@ -53,10 +53,10 @@ Built by **Team Forzentix** at hackathon speed ⚡.
 ![QuicActions](./screenshots/QuickActions.png)
 
 ### 📚 Medicine Registration  
-![MedicineRegestrations](/screenshots/admin-login.png)
+![MedicineRegestrations](./screenshots/MediceneRegistration.png)
 
-### 🔐 Admin Login  
-![Admin Login](/screenshots/admin-login.png)
+### 🔐 Medicine Validation  
+![MedicineValidation](./screenshots/MediceneValidation.png)
 
 ### 📊 Admin Dashbord  
 ![Admin Dashboard](/screenshots/analytics-dashboard.png)
