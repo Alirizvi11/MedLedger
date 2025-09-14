@@ -185,10 +185,16 @@ npm run dev
 
 ## 👨‍💻 Team Forzentix
 
-# Name	             #Role	           #GitHub
-Ali Rizvi	   Backend Architect      	@ali-rizvi
+| Name          | Role              | GitHub                                      |
+| ------------- | ----------------- | ------------------------------------------  |
+|** Ali Rizvi **| Backend Architect | [@ali-rizvi](https://github.com/alirizvi11) |
+|** Lokendra ** | Frontend Lead     | [@loky](https://github.com/guddubhaiya07)   |
+|**  Abhay   ** | Blockchain Dev    | [@abhay](https://github.com/abhi9519-ux)    |
 
-[Teammate 2]	Frontend Lead	[GitHub]
-[Teammate 3]	Blockchain Dev	[GitHub]
- 
 ---
+## 📬 Contact
+
+📧 teamforzentix@gmail.com
+
+🌐 ![Team Portfolio](https://forzentix-portfolio2.vercel.app/)
+    
