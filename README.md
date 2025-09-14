@@ -158,14 +158,16 @@ MedLedger/
 ## 🧪 Run Locally
 
 # Clone repo
-git clone https://github.com/yourusername/medledger2
+git clone https://github.com/Alirizvi11/MedLedger.git
 
 # Start Backend
+
 cd backend
 npm install
 node server.js
 
 # Start Frontend
+
 cd ../frontend
 npm install
 npm run dev
@@ -189,4 +191,4 @@ Ali Rizvi	   Backend Architect      	@ali-rizvi
 [Teammate 2]	Frontend Lead	[GitHub]
 [Teammate 3]	Blockchain Dev	[GitHub]
  
-
+---
