@@ -1,23 +1,25 @@
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import html2canvas from 'html2canvas'
 import {
   ArrowLeft, Users, Shield, TrendingUp, Hash, Moon, Sun,
   Plus, Search, QrCode, Heart, UserCheck, CheckCircle,
   Database, X, Activity
 } from 'lucide-react';
+
 import ScanQR from '../pages/ScanQR';
 import QRViewer from '../components/QRViewer.jsx';
 import ContactSection from "../sections/ContactSection.jsx";
 import FooterSection from "../sections/FooterSection.jsx";
 
+const API_BASE = 'https://medledger.onrender.com';
+const api = (path) => `${API_BASE}${path}`;
 
 const Navbar = ({ isDark }) => {
   // yaha jo sections hai unke id tumhare components me match karne chahiye
   const links = ["Home", "About Us", "Team", "Contact"];
 
   return (
-    <nav
+   <nav
       className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b 
       ${isDark ? "bg-gray-900/70 border-gray-800" : "bg-white/70 border-gray-200"}`}
     >
@@ -30,7 +32,6 @@ const Navbar = ({ isDark }) => {
           MedLedger
         </h2>
 
-        {/* Navigation Links */}
         <ul className="flex space-x-6">
           {links.map((link) => (
             <li key={link}>
@@ -49,7 +50,6 @@ const Navbar = ({ isDark }) => {
     </nav>
   );
 };
-
 
 
 // Theme Toggle Component
@@ -100,94 +100,10 @@ const Modal = ({ isOpen, onClose, title, children, isDark }) => {
     </div>
   );
 };
-// const AboutUs = ({ isDark }) => {
-//   const team = [
-//     { name: "Dr. A Sharma", role: "Blockchain Lead", bio: "Expert in healthcare blockchain integration.", img: "https://via.placeholder.com/150" },
-//     { name: "Riya Mehta", role: "Frontend Dev", bio: "Builds seamless user experiences.", img: "https://via.placeholder.com/150" },
-//     { name: "Ali Rizvi", role: "Backend Dev", bio: "Specialist in APIs & databases.", img: "https://via.placeholder.com/150" }
-//   ];
-//   return (
-//     <section id="aboutus" className="py-20 max-w-7xl mx-auto px-6">
-//       <h2 className={`text-3xl font-bold text-center mb-10 ${isDark ? "text-white" : "text-gray-900"}`}>
-//         Meet Our Team
-//       </h2>
-//       <div className="grid md:grid-cols-3 gap-8">
-//         {team.map((member, i) => (
-//           <div key={i} className={`rounded-2xl p-6 shadow-lg text-center ${
-//             isDark ? "bg-gray-900/60 border border-gray-700" : "bg-white border border-gray-200"
-//           }`}>
-//             <img src={member.img} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-4" />
-//             <h3 className={`text-xl font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>{member.name}</h3>
-//             <p className={`text-sm mb-2 ${isDark ? "text-cyan-400" : "text-blue-600"}`}>{member.role}</p>
-//             <p className={`${isDark ? "text-gray-300" : "text-gray-600"}`}>{member.bio}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
 
-// /* -------------------- Contact + Footer -------------------- */
-// const ContactFooter = ({ isDark }) => (
-//   <footer id="contact" className={`mt-20 py-12 ${isDark ? "bg-gray-900" : "bg-gray-100"}`}>
-//     <div className="max-w-5xl mx-auto px-6">
-//       <h2 className={`text-3xl font-bold mb-6 text-center ${isDark ? "text-white" : "text-gray-900"}`}>
-//         Contact Us
-//       </h2>
-//       <form className="grid gap-4 max-w-2xl mx-auto">
-//         <input type="text" placeholder="Your Name" className="p-3 rounded-lg border" />
-//         <input type="email" placeholder="Your Email" className="p-3 rounded-lg border" />
-//         <textarea placeholder="Your Message" className="p-3 rounded-lg border h-32"></textarea>
-//         <button type="submit" className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-//           Send Message
-//         </button>
-//       </form>
-//       <p className={`text-center mt-10 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
-//         © {new Date().getFullYear()} MedLedger2. All rights reserved.
-//       </p>
-//     </div>
-//   </footer>
-// );
-// // Modal Component
-// const Modal = ({ isOpen, onClose, title, children, isDark }) => {
-//   if (!isOpen) return null;
-
-//   return (
-//     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-//       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-//       <div className={`relative w-full max-w-2xl max-h-[90vh] overflow-auto rounded-2xl border ${
-//         isDark 
-//           ? 'bg-gray-900/95 border-gray-800/50' 
-//           : 'bg-white/95 border-gray-200/50'
-//       } backdrop-blur-md p-6`}>
-//         <div className="flex items-center justify-between mb-6">
-//           <h2 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-//             {title}
-//           </h2>
-//           <button
-//             onClick={onClose}
-//             className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-//               isDark ? 'hover:bg-white/10' : 'hover:bg-gray-900/10'
-//             }`}
-//           >
-//             <X size={20} className={isDark ? 'text-gray-400' : 'text-gray-600'} />
-//           </button>
-//         </div>
-//         {children}
-//       </div>
-//     </div>
-//   );
-// };
-
-// Register Medicine Form
 const RegisterMedicineForm = ({ isDark, onClose }) => {
   const [formData, setFormData] = useState({
-    name: '', 
-    manufacturer: '', 
-    batchNumber: '', 
-    expiryDate: '', 
-    dosage: '', 
-    description: ''
+    name: '', manufacturer: '', batchNumber: '', expiryDate: '', dosage: '', description: ''
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -201,23 +117,30 @@ const RegisterMedicineForm = ({ isDark, onClose }) => {
     setSuccess(null);
 
     try {
-      const response = await fetch("http://localhost:5000/api/medicine", {
+      console.log('Submitting to:', api('/api/medicine'));
+      
+      const response = await fetch(api('/api/medicine'), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
 
+      console.log('Response status:', response.status);
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Registration failed');
+        const errorData = await response.json().catch(() => ({ error: 'Registration failed' }));
+        throw new Error(errorData.error || `HTTP ${response.status}: Registration failed`);
       }
 
       const data = await response.json();
+      console.log('Success data:', data);
+      
       setSuccess(data);
       setFormData({
         name: '', manufacturer: '', batchNumber: '', 
         expiryDate: '', dosage: '', description: ''
       });
+
     } catch (err) {
       console.error('Registration error:', err);
       setError(err.message || 'Failed to register medicine. Please try again.');
@@ -228,12 +151,16 @@ const RegisterMedicineForm = ({ isDark, onClose }) => {
 
   const handleDownloadQR = async () => {
     if (!qrRef.current) return;
-    const canvas = await html2canvas(qrRef.current);
-    const dataURL = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = dataURL;
-    link.download = `Medicine-CID-${success.cid}.png`;
-    link.click();
+    try {
+      const canvas = await html2canvas(qrRef.current);
+      const dataURL = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = dataURL;
+      link.download = `Medicine-CID-${success.cid}.png`;
+      link.click();
+    } catch (error) {
+      console.error('Error downloading QR:', error);
+    }
   };
 
   const inputClass = `w-full p-3 rounded-xl border transition-colors ${
@@ -268,7 +195,7 @@ const RegisterMedicineForm = ({ isDark, onClose }) => {
             onClick={handleDownloadQR}
             className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-all"
           >
-            ⬇️ Download QR Code
+            Download QR Code
           </button>
         </div>
       )}
@@ -345,7 +272,6 @@ const RegisterMedicineForm = ({ isDark, onClose }) => {
     </div>
   );
 };
-
 // export default RegisterMedicineForm;
 
 // Medicine Lookup Form
@@ -369,9 +295,9 @@ const MedicineLookupForm = ({ isDark }) => {
     try {
       let response;
       if (searchQuery.startsWith('baf') || searchQuery.startsWith('Qm')) {
-        response = await fetch(`http://localhost:5000/api/medicine/cid/${searchQuery}`);
+        response = await fetch(api(`/api/medicine/cid/${searchQuery}`));
       } else {
-        response = await fetch(`http://localhost:5000/api/medicine/batch/${searchQuery}`);
+        response = await fetch(api(`/api/medicine/batch/${searchQuery}`));
       }
       
       if (!response.ok) {
@@ -472,6 +398,7 @@ const MedicineLookupForm = ({ isDark }) => {
   );
 };
 
+
 const RegisterOrganForm = ({ isDark, onClose }) => {
   const [form, setForm] = useState({ 
     name: '', 
@@ -491,7 +418,7 @@ const RegisterOrganForm = ({ isDark, onClose }) => {
     setSuccess(null);
 
     try {
-      const response = await fetch("http://localhost:5000/api/organ", {
+      const response = await fetch(api("/api/organ"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
@@ -516,12 +443,16 @@ const RegisterOrganForm = ({ isDark, onClose }) => {
 
   const handleDownloadQR = async () => {
     if (!qrRef.current) return;
-    const canvas = await html2canvas(qrRef.current);
-    const dataURL = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = dataURL;
-    link.download = `Organ-CID-${success.cid}.png`;
-    link.click();
+    try {
+      const canvas = await html2canvas(qrRef.current);
+      const dataURL = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = dataURL;
+      link.download = `Organ-CID-${success.cid}.png`;
+      link.click();
+    } catch (error) {
+      console.error('Error downloading QR:', error);
+    }
   };
 
   const inputClass = `w-full p-3 rounded-xl border transition-colors ${
@@ -559,7 +490,7 @@ const RegisterOrganForm = ({ isDark, onClose }) => {
             onClick={handleDownloadQR}
             className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-all"
           >
-            ⬇️ Download QR Code
+            Download QR Code
           </button>
         </div>
       )}
@@ -614,7 +545,6 @@ const RegisterOrganForm = ({ isDark, onClose }) => {
     </div>
   );
 };
-
 //Donor Register form
 const RegisterDonorForm = ({ isDark, onClose }) => {
   const [form, setForm] = useState({
@@ -632,7 +562,7 @@ const RegisterDonorForm = ({ isDark, onClose }) => {
     setSuccess(null);
 
     try {
-      const response = await fetch("http://localhost:5000/api/donor", {
+      const response = await fetch(api("/api/donor"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
@@ -656,12 +586,16 @@ const RegisterDonorForm = ({ isDark, onClose }) => {
 
   const handleDownloadQR = async () => {
     if (!qrRef.current) return;
-    const canvas = await html2canvas(qrRef.current);
-    const dataURL = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = dataURL;
-    link.download = `Donor-CID-${success.cid}.png`;
-    link.click();
+    try {
+      const canvas = await html2canvas(qrRef.current);
+      const dataURL = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = dataURL;
+      link.download = `Donor-CID-${success.cid}.png`;
+      link.click();
+    } catch (error) {
+      console.error('Error downloading QR:', error);
+    }
   };
 
   const inputClass = `w-full p-3 rounded-xl border transition-colors ${
@@ -698,7 +632,7 @@ const RegisterDonorForm = ({ isDark, onClose }) => {
             onClick={handleDownloadQR}
             className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-all"
           >
-            ⬇️ Download QR Code
+            Download QR Code
           </button>
         </div>
       )}
@@ -774,7 +708,7 @@ const DonorLookupForm = ({ isDark }) => {
     setResult(null);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/donor/${query}`);
+      const res = await fetch(api(`/api/donor/${query}`));
       if (!res.ok) {
         const errData = await res.json();
         throw new Error(errData.error || 'Donor not found');
@@ -843,7 +777,6 @@ const DonorLookupForm = ({ isDark }) => {
     </div>
   );
 };
-
 // Verify Consent Form
 const VerifyConsentForm = ({ isDark }) => {
   const [donorId, setDonorId] = useState('');
@@ -863,7 +796,7 @@ const VerifyConsentForm = ({ isDark }) => {
     setResult(null);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/consent/${donorId}`);
+      const response = await fetch(api(`/api/consent/${donorId}`));
       if (!response.ok) {
         throw new Error('Verification failed');
       }
@@ -933,7 +866,6 @@ const VerifyConsentForm = ({ isDark }) => {
     </div>
   );
 };
-
 // Verify CID Form
 const VerifyCIDForm = ({ isDark }) => {
   const [cid, setCid] = useState('');
@@ -953,7 +885,7 @@ const VerifyCIDForm = ({ isDark }) => {
     setRecord(null);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/medicine/cid/${cid}`);
+      const res = await fetch(api(`/api/medicine/cid/${cid}`));
       if (!res.ok) {
         const errData = await res.json();
         throw new Error(errData.error || 'CID not found');
@@ -1135,9 +1067,9 @@ const AboutUs = ({ isDark }) => {
             : 'bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)]'
         } bg-[size:50px_50px]`} />
       </div>
+      
       {/* Navbar */}
-    <Navbar isDark={isDark} />
-
+      <Navbar isDark={isDark} />
 
       {/* Theme Toggle */}
       <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
@@ -1272,9 +1204,10 @@ const AboutUs = ({ isDark }) => {
       >
         {renderModalContent()}
       </Modal>
-       <AboutUs isDark={isDark} />
-       <ContactSection isDark={isDark} />
-       <FooterSection />
+      
+      <AboutUs isDark={isDark} />
+      <ContactSection isDark={isDark} />
+      <FooterSection />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { api } from '../apiBase.js';
 import { useState } from 'react';
 import axios from 'axios';
 import QRViewer from '../components/QRViewer.jsx';
@@ -13,11 +14,11 @@ function RegisterBatch() {
   });
 
   const [result, setResult] = useState(null);
-
+  console.log('Resolved API URL:', api('/api/medicine'));
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/medicine', form);
+     const res = await axios.post(api('/api/medicine'), form);
       setResult(res.data);
     } catch (err) {
       console.error('Registration failed:', err);
