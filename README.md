@@ -1,7 +1,6 @@
+# 🧬 MedLedger – Blockchain-Powered Medicine Verification
 
-# 🧬 MedLedger2 – Blockchain-Powered Medicine Verification
-
-> A full-stack decentralized platform to verify **medicine authenticity** using **IPFS, Smart Contracts, and QR-based lookup**.  
+> A Web3 decentralized platform to verify **medicine authenticity** using **IPFS, Smart Contracts, and QR-based lookup**.  
 Built by **Team Forzentix** at hackathon speed ⚡.
 
 ![MedLedger Banner](./screenshots/banner.png) <!-- Replace with your actual project image -->
@@ -10,7 +9,7 @@ Built by **Team Forzentix** at hackathon speed ⚡.
 
 ## 🚀 Live Demo & Links
 
-- 🎥 [Demo Video](https://www.youtube.com/watch?v=fKKN6VTCdyw)  
+- 🎥 [Demo Video](https://www.youtube.com/playlist?list=PL6pVu-pne8klSWW_iv24CR9ELjpiN29qN)  
 - 🌐 [Try the App](https://medledger2.vercel.app)  
 - 🧑‍💻 [Team Portfolio](https://forzentix.vercel.app)  
 
@@ -54,24 +53,22 @@ Built by **Team Forzentix** at hackathon speed ⚡.
 ![QuicActions](./screenshots/QuickActions.png)
 
 ### 📚 Medicine Registration  
-![MedicineRegestrations](/screenshots/admin-login.png)
+![MedicineRegestrations](./screenshots/MediceneRegistration.png)
 
-### 🔐 Admin Login  
-![Admin Login](/screenshots/admin-login.png)
+### 🔐 Medicine Validation  
+![MedicineValidation](./screenshots/MediceneValidation.png)
 
-### 📊 Admin Dashbord  
-![Admin Dashboard](/screenshots/analytics-dashboard.png)
+### 📊 Register Organ  
+![RegisterOrgans](./screenshots/RegisterOrgan.png)
 
-### 📊 Add Member 
-![Add Member](/screenshots/register-member.png)
+### 📊 Qr Scan 
+![QrScan](./screenshots/QrScan.png)
 
-### 📦 Transaction Logs  
-![Transactions](/screenshots/transactions.png)
 ---
 
 ## 📂 Folder Structure
 
-```bash
+```
 MedLedger/
 ├── backend/
 |     ├── node_modules/          # Python cache files (ignored) 
@@ -156,9 +153,49 @@ MedLedger/
 |
 ├──screenshots/
 └──README.md
+```
+---
+## 🧪 Run Locally
+
+# Clone repo
+git clone https://github.com/Alirizvi11/MedLedger.git
+
+# Start Backend
+
+cd backend
+npm install
+node server.js
+
+# Start Frontend
+
+cd ../frontend
+npm install
+npm run dev
+
+---
+
+## 🛡️ Security & Reliability
+
+🔐 Private key handling with dotenv
+🧪 Reproducible smart contract calls
+📈 Benchmarked against traceability standards
+⚡ Gas-efficient & IPFS-resilient storage
+
+---
+
+## 👨‍💻 Team Forzentix
+>>>>>>> 7a54cba21fec42c42598f5531a41961d955be4de
 
 | Name          | Role              | GitHub                                      |
 | ------------- | ----------------- | ------------------------------------------  |
 |** Ali Rizvi **| Backend Architect | [@ali-rizvi](https://github.com/alirizvi11) |
 |** Lokendra ** | Frontend Lead     | [@loky](https://github.com/guddubhaiya07)   |
 |**  Abhay   ** | Blockchain Dev    | [@abhay](https://github.com/abhi9519-ux)    |
+
+---
+## 📬 Contact
+
+📧 teamforzentix@gmail.com
+
+🌐 ![Team Portfolio](https://forzentix-portfolio2.vercel.app/)
+    
