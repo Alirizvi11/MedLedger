@@ -17,17 +17,23 @@ import statsRoute from './routes/stats.js';
 const app = express();
 
 // Middleware
+app.use((req, res, next) => {
+  console.log('🌐 Incoming Origin:', req.headers.origin);
+  next();
+});
+
 app.use(cors({
   origin: [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
-    'https://medledger1.vercel.app/', // ✅ Add your Vercel frontend domain
-    'https://your-custom-domain.com'         // ✅ Add if you have custom domain
+    'https://medledger1.vercel.app', // ✅ No trailing slash
+    'https://your-custom-domain.com'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+
 
 
 app.use(express.json());
