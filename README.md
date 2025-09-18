@@ -10,7 +10,7 @@ Built by **Team Forzentix** at hackathon speed ⚡.
 ## 🚀 Live Demo & Links
 
 - 🎥 [Demo Video](https://www.youtube.com/playlist?list=PL6pVu-pne8klSWW_iv24CR9ELjpiN29qN)  
-- 🌐 [Try the App](https://medledger2.vercel.app)  
+- 🌐 [Try the App](https://medledger1.vercel.app/)  
 - 🧑‍💻 [Team Portfolio](https://forzentix.vercel.app)  
 
 ---
