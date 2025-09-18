@@ -1,16 +1,185 @@
-.cid-text {
-  font-size: 0.9rem;
-  word-break: break-word;
-  margin-top: 0.5rem;
-  color: #00ffff;
+.glass-card {
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 255, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.glass-card {
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 40px rgba(0, 255, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.qr-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.type-icon {
+  font-size: 1.5rem;
+}
+
+.qr-header h3 {
+  margin: 0;
+  color: #00ffff;
+  font-weight: 600;
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
   padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  inline-size: fit-content;
+  margin-inline: auto;
+}
+
+.qr-error {
+  padding: 2rem;
+  color: #ff6b6b;
+  font-weight: 500;
+}
+
+.cid-section {
+  margin: 1rem 0;
+}
+
+.cid-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.cid-text {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  word-break: break-all;
+  color: #00ffff;
+  background: none;
+  border: none;
+  padding: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.copy-btn {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
   margin-top: 1rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  flex-wrap: wrap;
+}
+
+.ipfs-link,
+.verify-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.ipfs-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+}
+
+.ipfs-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.verify-btn {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+}
+
+.verify-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .glass-card {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ipfs-link,
+  .verify-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .cid-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for copy success */
+@keyframes copySuccess {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.copy-btn:active {
+  animation: copySuccess 0.3s ease;
+}
+#camera {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: black;
 }

@@ -13,33 +13,41 @@ Content-Type: application/json
 
 ###
 
+### 💊 Lookup Medicine by Batch
+### 💊 Lookup Medicine by Batch
+GET http://localhost:5000/api/medicine/batch/CDX-T10
 
-### Lookup by CID
-GET http://localhost:5000/api/medicine/cid/QmQPERrcmtRYhKHQru7TwH7DqToFVZ4Qx8JPybea3JMjUy
-
-
-###
 
 ### Register Organ
 POST http://localhost:5000/api/organ
 Content-Type: application/json
 
 {
-  "donorId": "D123",
-  "organType": "Kidney",
+  "name": "Ali Rizvi",
+  "organ": "Heart",
   "bloodGroup": "B+",
-  "notes": "Urgent case"
+  "location": "Pune"
+}
+###
+POST http://localhost:5000/api/donor
+Content-Type: application/json
+
+{
+  "name": "Ali Rizvi",
+  "age": 25,
+  "bloodGroup": "B+",
+  "location": "Pune"
 }
 
-###
+
 
 ### Verify Consent
-GET http://localhost:5000/api/consent/D123
+GET http://localhost:5000/api/consent/0
 
 ###
 
 ### Lookup Donor
-GET http://localhost:5000/api/donor/D123
+GET http://localhost:5000/api/donor/3
 
 ###
 

@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-
-
 contract MedLedgerOrgan {
     struct Donor {
         string name;
@@ -17,6 +15,7 @@ contract MedLedgerOrgan {
     uint public donorCount;
 
     event DonorRegistered(uint indexed id, string name);
+    event Debug(string key, string value); // ✅ Added debug event
 
     function registerDonor(
         string memory name,
@@ -26,6 +25,14 @@ contract MedLedgerOrgan {
         string memory ipfsHash,
         bool consent
     ) public {
+        // ✅ Emit debug logs for each input
+        emit Debug("Name", name);
+        emit Debug("Organ", organ);
+        emit Debug("BloodGroup", bloodGroup);
+        emit Debug("Location", location);
+        emit Debug("CID", ipfsHash);
+        emit Debug("Consent", consent ? "true" : "false");
+
         donors[donorCount] = Donor(name, organ, bloodGroup, location, ipfsHash, consent);
         emit DonorRegistered(donorCount, name);
         donorCount++;

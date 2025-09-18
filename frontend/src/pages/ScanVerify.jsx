@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { api } from '@/apiBase';
 
 function ScanVerify() {
   const [cid, setCid] = useState('');
   const [data, setData] = useState(null);
 
   const verifyCID = async () => {
-    const res = await axios.get(`http://localhost:5000/api/verify/${cid}`);
+    const res = await axios.get(api(`/api/verify/${cid}`));
     setData(res.data.ipfsData);
   };
 

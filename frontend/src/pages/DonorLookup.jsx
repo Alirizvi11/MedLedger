@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { api } from '@/apiBase';
 
 function DonorLookup() {
   const [id, setId] = useState('');
   const [donor, setDonor] = useState(null);
 
   const fetchDonor = async () => {
-    const res = await axios.get(`http://localhost:5000/api/donor/${id}`);
+    const res = await axios.get(api(`/api/donor/${id}`));
     setDonor(res.data);
   };
 

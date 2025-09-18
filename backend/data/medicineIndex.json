@@ -1,11 +1,71 @@
 {
   "CDX-T10": {
-    "cid": "QmQPERrcmtRYhKHQru7TwH7DqToFVZ4Qx8JPybea3JMjUy",
-    "txHash": "0x8a467141b42f084d59cbdab411218b732a1a58c2ec7e880811c90a01ff11beba",
+    "cid": "QmU7Bk7XLqjHdjhvVCpC3oXN77hj51T2FqoRL6h5XvMW8v",
+    "txHash": "0x23b4e74d39aaa0860ebdb725b4aaa3a27d3832d0e538caab8aa8488ec8c4ab48",
     "name": "Paracetamol",
+    "batchNumber": "CDX-T10",
     "expiryDate": "2025-12-31",
     "manufacturer": "Cipla",
     "dosage": "500mg",
-    "description": "Pain relief and fever reduce"
+    "description": "Pain relief"
+  },
+  "Evn-21": {
+    "cid": "QmX2FSuk2Eqx1wXckrRNgBYvroj2NRFR5q8nNH95twNPW2",
+    "txHash": "0xcccbceb787f1ecf708dcf45c6d28520806d7c7bc65919f741edd5ef753404107",
+    "name": "Evion",
+    "expiryDate": "2034-08-28",
+    "manufacturer": "Cipla",
+    "dosage": "100mg",
+    "description": "Its vitamin e"
+  },
+  "CPL-50": {
+    "cid": "QmWoj3y2sGAhvhTuacf6qMDDFYupjycB9Yw7xLaAaFFdHg",
+    "txHash": "0xcc47d480ae979248b0d67b9b83730bcd4c051f4b12bc475c7e2748a8c8f6e923",
+    "name": "Calcium",
+    "batchNumber": "CPL-50",
+    "expiryDate": "2032-08-28",
+    "manufacturer": "Cipla",
+    "dosage": "500mg",
+    "description": "1time"
+  },
+  "BT-1": {
+    "cid": "QmdarcdSd282SZSg9EjFjELuiJb1siWGTdwfzdhGcShPVT",
+    "txHash": "0x041cfa7313713cea54fee7be8c0965e97dd5161b1e83aa2f8d233515e06420cc",
+    "name": "ShellCall",
+    "batchNumber": "BT-1",
+    "expiryDate": "2034-09-29",
+    "manufacturer": "Cipla",
+    "dosage": "500mg",
+    "description": "its calcium medicine"
+  },
+  "M-1": {
+    "cid": "QmVtCg6cWcYcivBdNQSGQmKbK4SauVqb8Y8KG78Z4rEijR",
+    "txHash": "0x8cbfc2e9f449f101e1d647f16fa1660890595815861aa1cfc831104523d58689",
+    "name": "Medx",
+    "batchNumber": "M-1",
+    "expiryDate": "2032-09-28",
+    "manufacturer": "Medx",
+    "dosage": "500mg",
+    "description": "its a good soap"
+  },
+  "M-2": {
+    "cid": "QmYBJWx7PFp38SEiuyaPhQvXBo7T4oraiaDNNiePRPPqih",
+    "txHash": "0xabdf8f2de24fe668a75999bd7ef73942834032afec1e1cb581c356dcd49f0253",
+    "name": "Medc",
+    "batchNumber": "M-2",
+    "expiryDate": "2033-09-28",
+    "manufacturer": "Medx",
+    "dosage": "500mg",
+    "description": "its good"
+  },
+  "BS-5": {
+    "cid": "QmUYrFMACWzPN3qjvms7ouuHPEbbNZvXK5GgLLENt3F5gx",
+    "txHash": "0x1978bba74d932fa3a22c1be9b44d5e89361a2cd2e25afe6dc2db3eae4bada9bc",
+    "name": "Becosule",
+    "batchNumber": "BS-5",
+    "expiryDate": "0026-05-01",
+    "manufacturer": "Pfizer Limited",
+    "dosage": "500mg",
+    "description": "For Gut Health"
   }
 }

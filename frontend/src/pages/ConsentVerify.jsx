@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { api } from '@/apiBase';
 
 function ConsentVerify() {
   const [id, setId] = useState('');
   const [consent, setConsent] = useState(null);
 
   const checkConsent = async () => {
-    const res = await axios.get(`http://localhost:5000/api/consent/${id}`);
+    const res = await axios.get(api(`/api/consent/${id}`));
     setConsent(res.data.consent);
   };
 
