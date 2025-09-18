@@ -18,11 +18,17 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'https://medledger-frontend.vercel.app', // ✅ Add your Vercel frontend domain
+    'https://your-custom-domain.com'         // ✅ Add if you have custom domain
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+
 
 app.use(express.json());
 
